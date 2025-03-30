@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- Swiper CSS -->
+     <link rel="stylesheet" href="/src/css/swiper.css">
+
+     <!-- Swiper -->
+     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- Estilado -->
+     <link rel="stylesheet" href="/src/css/styles.css">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    <section>
+        <!-- Sección Header -->
+        <header class="flex flex-col bg-blue-500 p-4 text-white max-w-screen-lg mx-auto rounded-lg mb-5 mt-5">
+
+            <!-- Título principal -->
+            <div class="flex justify-center w-full text-center mb-10">
+                <h1 class="text-3xl max-w-2xl font-bold">
+                    Bienvenidos al Honorable Concejo Municipal de 
+                    <span class="municipio">Puerto Triunfo</span>
+                </h1>
+            </div>
+            
+            <!-- Botones de navegación e input --> 
+            <div class="flex justify-evenly items-center">
+                
+                <!-- Botones de navegación -->
+                <nav>
+                    <ul class="flex space-x-4">
+                        <li><a href="#home" class="bg-white p-2 rounded-lg text-black text-lg hover:text-blue-400">Historia</a></li>
+                        <li><a href="#about" class="bg-white p-2 rounded-lg text-black text-lg hover:text-blue-200">Misión</a></li>
+                        <li><a href="#contact" class="bg-white p-2 rounded-lg text-black text-lg hover:text-blue-200">Visión</a></li>
+                        <li><a href="#contact" class="bg-white p-2 rounded-lg text-black text-lg hover:text-blue-200">Sitios de interés <i class="fa-solid fa-angle-down"></i>
+                        </a></li>
+                    </ul>
+                </nav>
+                
+                <!-- Input de búsqueda -->
+                <div class="flex items-center">
+                    <input 
+                        type="text"
+                        placeholder="Search..."
+                        class="border border-gray-300 rounded-lg p-2 text-black focus:outline-none focus:ring-2 focus:ring-blue-500 mr-2"
+                    >
+                    <button type="submit" class="">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </button>
+                </div>
+            </div>
+        </header>
+
+        <!-- Carrusel -->
+        <section class="swiper relative w-full max-w-5xl mx-auto rounded-lg overflow-hidden shadow-lg" aria-label="Carrusel principal">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <img src="/src/img/prueba.jpg" alt="Banner informativo de Hacienda 1" class="w-full h-48 md:h-80 object-fill md:object-cover">
+                </div>
+                <div class="swiper-slide">
+                    <img src="/src/img/prueba.jpg" alt="Banner informativo de Hacienda 2" class="w-full h-48 md:h-80 object-fill md:object-cover">
+                </div>
+            </div>
+          
+            <!-- Controles de navegación -->
+            <div class="swiper-button-prev !text-white"></div>
+            <div class="swiper-button-next !text-white"></div>
+          
+            <!-- Paginación -->
+            <div class="swiper-pagination"></div>
+          
+            <!-- Controles de reproducción -->
+            <div class="absolute bottom-2 right-2 flex space-x-2 z-10">
+                <button id="pauseBtn" class="bg-white text-gray-800 p-1 sm:p-2 rounded-full shadow-md hover:bg-gray-200 transition text-xs sm:text-sm">
+                    <i class="fas fa-pause"></i>
+                    <span class="hidden sm:inline">Pausar</span>
+                </button>
+                <button id="playBtn" class="bg-white text-gray-800 p-1 sm:p-2 rounded-full shadow-md hover:bg-gray-200 transition hidden text-xs sm:text-sm">
+                    <i class="fas fa-play"></i>
+                    <span class="hidden sm:inline">Continuar</span>
+                </button>
+            </div>
+        </section>
+
+        <!-- Sección de noticias -->
+        <section class="bg-red-200 p-4 max-w-screen-lg mx-auto rounded-lg mt-5 shadow-lg flex flex-col">
+           <h2 class="text-3xl font-bold text-center">Infórmate</h2>
+           <div class="flex flex-row items-center">
+                <figure class="w-1/3">
+                    <img class="rounded-lg" src="/src/img/prueba.jpg" alt="">
+                </figure>
+                <div class="w-2/3 p-4 bg-blue-500 ml-3">
+                    <p class="font-bold">Lorem ipsum dolor sit amet, consectetur adipisicing eli</p>
+                    <p class="text-sm mb-2">Mérida, Yucatán, Martes 25 de Marzo de 2025</p>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus, iusto officia blanditiis sapiente eligendi eius iste sed dolorem, voluptatem voluptatum veniam maxime numquam! Culpa ipsam error vitae dolorum numquam fugiat.</p>
+                    <div>
+                        <i class="fa-solid fa-arrow-left-long"></i>
+                        <i class="fa-solid fa-arrow-right-long"></i>
+                        <button type="button" class="bg-white p-2 rounded-full">Más Noticias</button>
+                    </div>
+                </div>
+           </div>
+
+    </section>
+
+
+    <!-- Swiper -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <!-- Scripts -->
+     <script src="/src/js/swiper.js"></script>
+</body>
+</html>
