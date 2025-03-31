@@ -39,10 +39,10 @@
                 <!-- Botones de navegación -->
                 <nav>
                     <ul class="flex space-x-4">
-                        <li><a href="#home" class="bg-white p-2 rounded-lg text-black text-lg hover:text-blue-400">Historia</a></li>
-                        <li><a href="#about" class="bg-white p-2 rounded-lg text-black text-lg hover:text-blue-200">Misión</a></li>
-                        <li><a href="#contact" class="bg-white p-2 rounded-lg text-black text-lg hover:text-blue-200">Visión</a></li>
-                        <li><a href="#contact" class="bg-white p-2 rounded-lg text-black text-lg hover:text-blue-200">Sitios de interés <i class="fa-solid fa-angle-down"></i>
+                        <li><a href="#home" class="bg-white p-2 rounded-full text-black text-lg hover:text-blue-400">Historia</a></li>
+                        <li><a href="#about" class="bg-white p-2 rounded-full text-black text-lg hover:text-blue-200">Misión</a></li>
+                        <li><a href="#contact" class="bg-white p-2 rounded-full text-black text-lg hover:text-blue-200">Visión</a></li>
+                        <li><a href="#contact" class="bg-white p-2 rounded-full text-black text-lg hover:text-blue-200">Sitios de interés <i class="fa-solid fa-angle-down"></i>
                         </a></li>
                     </ul>
                 </nav>
@@ -52,7 +52,7 @@
                     <input 
                         type="text"
                         placeholder="Search..."
-                        class="border border-gray-300 rounded-lg p-2 text-black focus:outline-none focus:ring-2 focus:ring-blue-500 mr-2"
+                        class="border border-gray-300 rounded-full p-2 text-black focus:outline-none focus:ring-2 focus:ring-blue-500 mr-2"
                     >
                     <button type="submit" class="">
                         <i class="fa-solid fa-magnifying-glass"></i>
@@ -93,25 +93,28 @@
         </section>
 
         <!-- Sección de noticias -->
-        <section class="bg-red-200 p-4 max-w-screen-lg mx-auto rounded-lg mt-5 shadow-lg flex flex-col">
-           <h2 class="text-3xl font-bold text-center">Infórmate</h2>
-           <div class="flex flex-row items-center">
-                <figure class="w-1/3">
-                    <img class="rounded-lg" src="/src/img/prueba.jpg" alt="">
+        <section class="bg-red-200 p-4 max-w-screen-lg mx-auto rounded-lg mt-5 shadow-lg mb-5">
+            <h2 class="text-3xl font-bold text-center mb-4">Infórmate</h2>
+            <div class="flex flex-row items-stretch">
+                <figure class="w-2/5">
+                    <img class="rounded-l-lg w-full h-full object-cover" src="/src/img/prueba.jpg" alt="">
                 </figure>
-                <div class="w-2/3 p-4 bg-blue-500 ml-3">
-                    <p class="font-bold">Lorem ipsum dolor sit amet, consectetur adipisicing eli</p>
-                    <p class="text-sm mb-2">Mérida, Yucatán, Martes 25 de Marzo de 2025</p>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus, iusto officia blanditiis sapiente eligendi eius iste sed dolorem, voluptatem voluptatum veniam maxime numquam! Culpa ipsam error vitae dolorum numquam fugiat.</p>
-                    <div>
-                        <i class="fa-solid fa-arrow-left-long"></i>
-                        <i class="fa-solid fa-arrow-right-long"></i>
-                        <button type="button" class="bg-white p-2 rounded-full">Más Noticias</button>
+                <div class="w-3/5 p-6 bg-blue-500 rounded-r-lg">
+                    <h2 class="text-xl font-bold mb-1">Lorem ipsum dolor sit amet, consectetur adipisicing eli</h2>
+                    <p class="text-sm mb-4">Mérida, Yucatán, Martes 25 de Marzo de 2025</p>
+                    <p class="mb-5">Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus, iusto officia blanditiis sapiente eligendi eius iste sed dolorem, voluptatem voluptatum veniam maxime numquam! Culpa ipsam error vitae dolorum numquam fugiat.</p>
+                    <div class="flex items-center">
+                        <button type="button">
+                            <i class="fa-solid fa-arrow-left-long mr-2"></i>
+                        </button>
+                        <button type="button">
+                            <i class="fa-solid fa-arrow-right-long mr-2"></i>
+                        </button>
+                        <button type="button" class="bg-white py-2 px-4 rounded-full text-sm">Más Noticias</button>
                     </div>
                 </div>
-           </div>
-
-    </section>
+            </div>
+        </section>
 
 
     <!-- Swiper -->
