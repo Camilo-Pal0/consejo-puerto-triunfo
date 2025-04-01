@@ -21,13 +21,13 @@
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body>
-    <section>
+    <section class="bg-gray-100">
         <!-- Sección Header -->
-        <header class="flex flex-col bg-blue-500 p-4 text-white max-w-screen-lg mx-auto rounded-lg mb-5 mt-5">
+        <header class="flex flex-col bg-white p-4 text-white max-w-screen-lg mx-auto rounded-lg mb-5 mt-5 border border-gray-300">
 
             <!-- Título principal -->
             <div class="flex justify-center w-full text-center mb-10">
-                <h1 class="text-3xl max-w-2xl font-bold">
+                <h1 class="text-3xl max-w-2xl font-bold text-[#004880]">
                     Bienvenidos al Honorable Concejo Municipal de 
                     <span class="municipio">Puerto Triunfo</span>
                 </h1>
@@ -39,30 +39,58 @@
                 <!-- Botones de navegación -->
                 <nav>
                     <ul class="flex space-x-4">
-                        <li><a href="#home" class="bg-white p-2 rounded-full text-black text-lg hover:text-blue-400">Historia</a></li>
-                        <li><a href="#about" class="bg-white p-2 rounded-full text-black text-lg hover:text-blue-200">Misión</a></li>
-                        <li><a href="#contact" class="bg-white p-2 rounded-full text-black text-lg hover:text-blue-200">Visión</a></li>
-                        <li><a href="#contact" class="bg-white p-2 rounded-full text-black text-lg hover:text-blue-200">Sitios de interés <i class="fa-solid fa-angle-down"></i>
-                        </a></li>
+                        <li class="relative">
+                            <a href="#home" 
+                               class="bg-blue-500 px-6 py-3 rounded-full text-white text-lg 
+                                      transition-all duration-300 ease-in-out transform 
+                                      hover:shadow-[6px_2px_8px_rgba(0,0,0,0.2)] hover:bg-[#004880]">
+                                Historia
+                            </a>
+                        </li>
+                        <li class="relative">
+                            <a href="#home" 
+                               class="bg-blue-500 px-6 py-3 rounded-full text-white text-lg 
+                                      transition-all duration-300 ease-in-out transform 
+                                      hover:shadow-[6px_2px_8px_rgba(0,0,0,0.2)] hover:bg-[#004880]">
+                                Misión
+                            </a>
+                        </li>
+                        <li class="relative">
+                            <a href="#home" 
+                               class="bg-blue-500 px-6 py-3 rounded-full text-white text-lg 
+                                      transition-all duration-300 ease-in-out transform 
+                                      hover:shadow-[6px_2px_8px_rgba(0,0,0,0.2)] hover:bg-[#004880]">
+                                Visión
+                            </a>
+                        </li>
+                        <li class="relative">
+                            <a href="#home" 
+                               class="bg-blue-500 px-6 py-3 rounded-full text-white text-lg 
+                                      transition-all duration-300 ease-in-out transform 
+                                      hover:shadow-[6px_2px_8px_rgba(0,0,0,0.2)] hover:bg-[#004880]">
+                                Sitios de Interés
+                                <i class="fa-solid fa-angle-down"></i>
+                            </a>
+                        </li>                         
                     </ul>
                 </nav>
                 
                 <!-- Input de búsqueda -->
-                <div class="flex items-center">
+                <div class="flex items-center relative">
                     <input 
                         type="text"
                         placeholder="Search..."
-                        class="border border-gray-300 rounded-full p-2 text-black focus:outline-none focus:ring-2 focus:ring-blue-500 mr-2"
+                        class="border-2 border-blue-500 rounded-full p-2 text-black focus:outline-none focus:ring-2 focus:ring-blue-500 mr-2"
                     >
                     <button type="submit" class="">
-                        <i class="fa-solid fa-magnifying-glass"></i>
+                        <i class="fa-solid fa-magnifying-glass text-white text-xm absolute top-[5.5px] right-4 bg-blue-500 p-2 rounded-full"></i>
                     </button>
                 </div>
             </div>
         </header>
 
-        <!-- Carrusel -->
-        <section class="swiper relative w-full max-w-5xl mx-auto rounded-lg overflow-hidden shadow-lg" aria-label="Carrusel principal">
+        <!-- Carrusel Principal (con autoplay) -->
+        <section class="banner-swiper relative w-full max-w-5xl mx-auto rounded-lg overflow-hidden shadow-lg" aria-label="Carrusel principal">
             <div class="swiper-wrapper">
                 <div class="swiper-slide">
                     <img src="/src/img/prueba.jpg" alt="Banner informativo de Hacienda 1" class="w-full h-48 md:h-80 object-fill md:object-cover">
@@ -71,51 +99,114 @@
                     <img src="/src/img/prueba.jpg" alt="Banner informativo de Hacienda 2" class="w-full h-48 md:h-80 object-fill md:object-cover">
                 </div>
             </div>
-          
-            <!-- Controles de navegación -->
-            <div class="swiper-button-prev !text-white"></div>
-            <div class="swiper-button-next !text-white"></div>
-          
+            
+            <!-- Controles de navegación con nuevos íconos -->
+            <div class="swiper-button-prev !text-white">
+                <i class="fa-solid fa-arrow-left-long text-[#004880] text-[30px] bg-white/60 p-2 rounded-xl transition-all duration-300 ease-in-out transform hover:bg-white"></i>
+            </div>
+            <div class="swiper-button-next !text-white">
+                <i class="fa-solid fa-arrow-right-long text-[#004880] text-[30px] bg-white/60 p-2 rounded-xl transition-all duration-300 ease-in-out transform hover:bg-white"></i>
+            </div>
+            
             <!-- Paginación -->
             <div class="swiper-pagination"></div>
-          
-            <!-- Controles de reproducción -->
-            <div class="absolute bottom-2 right-2 flex space-x-2 z-10">
-                <button id="pauseBtn" class="bg-white text-gray-800 p-1 sm:p-2 rounded-full shadow-md hover:bg-gray-200 transition text-xs sm:text-sm">
-                    <i class="fas fa-pause"></i>
-                    <span class="hidden sm:inline">Pausar</span>
-                </button>
-                <button id="playBtn" class="bg-white text-gray-800 p-1 sm:p-2 rounded-full shadow-md hover:bg-gray-200 transition hidden text-xs sm:text-sm">
-                    <i class="fas fa-play"></i>
-                    <span class="hidden sm:inline">Continuar</span>
-                </button>
-            </div>
         </section>
 
-        <!-- Sección de noticias -->
-        <section class="bg-red-200 p-4 max-w-screen-lg mx-auto rounded-lg mt-5 shadow-lg mb-5">
-            <h2 class="text-3xl font-bold text-center mb-4">Infórmate</h2>
-            <div class="flex flex-row items-stretch">
-                <figure class="w-2/5">
-                    <img class="rounded-l-lg w-full h-full object-cover" src="/src/img/prueba.jpg" alt="">
-                </figure>
-                <div class="w-3/5 p-6 bg-blue-500 rounded-r-lg">
-                    <h2 class="text-xl font-bold mb-1">Lorem ipsum dolor sit amet, consectetur adipisicing eli</h2>
-                    <p class="text-sm mb-4">Mérida, Yucatán, Martes 25 de Marzo de 2025</p>
-                    <p class="mb-5">Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus, iusto officia blanditiis sapiente eligendi eius iste sed dolorem, voluptatem voluptatum veniam maxime numquam! Culpa ipsam error vitae dolorum numquam fugiat.</p>
-                    <div class="flex items-center">
-                        <button type="button">
-                            <i class="fa-solid fa-arrow-left-long mr-2"></i>
-                        </button>
-                        <button type="button">
-                            <i class="fa-solid fa-arrow-right-long mr-2"></i>
-                        </button>
-                        <button type="button" class="bg-white py-2 px-4 rounded-full text-sm">Más Noticias</button>
+        <section class="bg-white p-4 max-w-screen-lg mx-auto rounded-lg mt-5 shadow-lg mb-5 border border-gray-300">
+            <h2 class="text-3xl font-bold text-center mb-4 text-[#004880]">Infórmate</h2>
+            
+            <!-- Contenedor principal de Swiper para Noticias con altura fija -->
+            <div class="news-swiper">
+                <div class="swiper-wrapper">
+                    <!-- Slide 1 -->
+                    <div class="swiper-slide">
+                        <div class="flex flex-row items-stretch news-container">
+                            <figure class="w-2/5">
+                                <img class="rounded-l-lg w-full h-full object-cover" src="/src/img/Pueba2.jpg" alt="Noticia 1">
+                            </figure>
+                            <div class="w-3/5 p-6 bg-gray-100 border border-gray-300 rounded-r-lg text-start flex flex-col">
+                                <div class="flex-grow overflow-hidden">
+                                    <p class="text-xl font-bold mb-1 text-[#004880]">Lorem ipsum dolor sit amet, consectetur adipisicing eli</p>
+                                    <p class="text-sm mb-4">Mérida, Yucatán, Martes 25 de Marzo de 2025</p>
+                                    <p class="mb-2 line-clamp-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus, iusto officia blanditiis sapiente eligendi eius iste sed dolorem, voluptatem voluptatum veniam maxime numquam! Culpa ipsam error vitae dolorum numquam fugiat.</p>
+                                    <a href="/noticias/noticia1" class="text-blue-500 hover:text-[#004880] inline-block mb-6">Ver más</a>
+                                </div>
+                                <div class="flex items-center justify-center mt-auto pt-4">
+                                    <button type="button" class="news-prev">
+                                        <i class="fa-solid fa-arrow-left-long mr-2 text-blue-500 text-[30px] transition-all duration-300 ease-in-out transform hover:text-[#004880]"></i>
+                                    </button>
+                                    <button type="button" class="news-next">
+                                        <i class="fa-solid fa-arrow-right-long mr-2 text-blue-500 text-[30px] transition-all duration-300 ease-in-out transform hover:text-[#004880]"></i>
+                                    </button>
+                                    <button type="button" class="bg-blue-500 px-6 py-3 rounded-full text-white text-lg transition-all duration-300 ease-in-out transform hover:shadow-[6px_2px_8px_rgba(0,0,0,0.2)] hover:bg-[#004880]">Más Noticias</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Slide 2 -->
+                    <div class="swiper-slide">
+                        <div class="flex flex-row items-stretch news-container">
+                            <figure class="w-2/5">
+                                <img class="rounded-l-lg w-full h-full object-cover" src="/src/img/prueba.jpg" alt="Noticia 2">
+                            </figure>
+                            <div class="w-3/5 p-6 bg-gray-100 border border-gray-300 rounded-r-lg text-start flex flex-col">
+                                <div class="flex-grow overflow-hidden">
+                                    <p class="text-xl font-bold mb-1 text-[#004880]">Segunda noticia: avances importantes en la región</p>
+                                    <p class="text-sm mb-4">Mérida, Yucatán, Miércoles 26 de Marzo de 2025</p>
+                                    <p class="mb-2 line-clamp-3">Proin eget tortor risus. Donec sollicitudin molestie malesuada. Curabitur aliquet quam id dui posuere blandit. Pellentesque in ipsum id orci porta dapibus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices. lo</p>
+                                    <a href="/noticias/noticia2" class="text-blue-500 hover:text-[#004880] inline-block mb-6">Ver más</a>
+                                </div>
+                                <div class="flex items-center justify-center mt-auto pt-4">
+                                    <button type="button" class="news-prev">
+                                        <i class="fa-solid fa-arrow-left-long mr-2 text-blue-500 text-[30px] transition-all duration-300 ease-in-out transform hover:text-[#004880]"></i>
+                                    </button>
+                                    <button type="button" class="news-next">
+                                        <i class="fa-solid fa-arrow-right-long mr-2 text-blue-500 text-[30px] transition-all duration-300 ease-in-out transform hover:text-[#004880]"></i>
+                                    </button>
+                                    <button type="button" class="bg-blue-500 px-6 py-3 rounded-full text-white text-lg transition-all duration-300 ease-in-out transform hover:shadow-[6px_2px_8px_rgba(0,0,0,0.2)] hover:bg-[#004880]">Más Noticias</button>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
+        <!-- Sección de comunicación -->
+        <section class="bg-white p-4 max-w-screen-lg mx-auto rounded-lg mt-5 shadow-lg mb-5 border border-gray-300">
+            <h3 class="text-3xl font-bold text-center mb-6 text-[#004880]">Comunícate</h3>
+
+            <!-- botones -->
+             <div class="flex flex-row justify-evenly">
+                <button type="button" class="bg-blue-500 py-2 px-4 rounded-full text-lg text-white bg-blue-500 px-6 py-3 rounded-full text-white text-lg transition-all duration-300 ease-in-out transform hover:shadow-[6px_2px_8px_rgba(0,0,0,0.2)] hover:bg-[#004880]"><i class="fa-solid fa-phone mr-2"></i>Teléfono</button>
+                <button type="button" class="bg-blue-500 py-2 px-4 rounded-full text-lg text-white bg-blue-500 px-6 py-3 rounded-full text-white text-lg transition-all duration-300 ease-in-out transform hover:shadow-[6px_2px_8px_rgba(0,0,0,0.2)] hover:bg-[#004880]"><i class="fa-solid fa-phone mr-2"></i>Teléfono</button>
+                <button type="button" class="bg-blue-500 py-2 px-4 rounded-full text-lg text-white bg-blue-500 px-6 py-3 rounded-full text-white text-lg transition-all duration-300 ease-in-out transform hover:shadow-[6px_2px_8px_rgba(0,0,0,0.2)] hover:bg-[#004880]"><i class="fa-solid fa-phone mr-2"></i>Teléfono</button>  
+             </div>
+        </section>
+
+        <footer class="bg-white p-4 max-w-screen-lg mx-auto rounded-lg mt-5 mb-5 border border-gray-300">
+            <section class="flex flex-row items-center justify-evenly text-white">
+                <div class="text-black">
+                    <p><span class="font-bold text-lg text-[#004880]">Medio de comunicación</span> <br> 
+                    <span class="font-bold italic text-[#004880]">Correo Institucional:</span> <br>
+                    concejal@puertotriunfo-antioquia.gov.co <br>
+                    concejopuertotriunfo@gmail.com <br>
+                    <span class="font-bold italic text-[#004880]">Celular: <br>  
+                    </span>3213076309 <br>    
+                    </p>
+                    <div class="flex flex-row space-x-4 text-[#004880] mt-2">
+                        <a href="#"><i class="fa-brands fa-facebook text-3xl transition-all duration-300 ease-in-out transform hover:text-blue-500"></i></a>
+                        <a href="#"><i class="fa-brands fa-instagram text-3xl transition-all duration-300 ease-in-out transform hover:text-blue-500"></i></a>
+                        <a href="#"><i class="fa-brands fa-x-twitter text-3xl transition-all duration-300 ease-in-out transform hover:text-blue-500"></i></a>
+                    </div>
+                </div>
+                <div>
+                    <img src="/src/img/escudo-puerto-triunfo.jpg" alt="Escudo de Puerto Triunfo" class="w-32 h-32 mx-auto mb-4">
+                    <h4 class="text-center text-3xl font-bold text-[#004880]">Consejo de Puerto Triunfo</h4>
+                </div>
+            </section>
+        </footer>
 
     <!-- Swiper -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>

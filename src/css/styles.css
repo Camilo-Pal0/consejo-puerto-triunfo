@@ -1,0 +1,31 @@
+*{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; 
+}
+
+.line-clamp-3 {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.news-container {
+    height: 400px; /* Altura fija para todos los contenedores */
+}
+
+.news-swiper .swiper-slide .flex-col {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* Para asegurarnos que el Swiper también respete la altura fija */
+.news-swiper, .news-swiper .swiper-wrapper, .news-swiper .swiper-slide {
+    height: 400px;
+}
+
+/* Asegura que las imágenes no distorsionen la altura */
+.news-container figure {
+    height: 100%;
+}

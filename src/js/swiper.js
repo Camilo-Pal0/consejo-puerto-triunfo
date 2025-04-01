@@ -1,39 +1,64 @@
-// Selecciona todos los elementos con la clase .swiper
-const swipers = document.querySelectorAll('.swiper');
-
-// Recorre cada swiper y lo inicializa
-swipers.forEach((swiperEl, index) => {
-  const swiper = new Swiper(swiperEl, {
-    loop: true,
-    autoplay: {
-      delay: 3000,
-      disableOnInteraction: false,
-    },
-    navigation: {
-      nextEl: swiperEl.querySelector('.swiper-button-next'),
-      prevEl: swiperEl.querySelector('.swiper-button-prev'),
-    },
-    pagination: {
-      el: swiperEl.querySelector('.swiper-pagination'),
-      clickable: true,
-    },
+document.addEventListener('DOMContentLoaded', function() {
+  // Inicializar el slider del banner (con autoplay)
+  
+  const bannerSwiper = new Swiper('.banner-swiper', {
+      loop: true,
+      autoplay: {
+          delay: 3000,
+          disableOnInteraction: false,
+      },
+      navigation: {
+          nextEl: '.banner-swiper .swiper-button-next',
+          prevEl: '.banner-swiper .swiper-button-prev',
+      },
+      pagination: {
+          el: '.banner-swiper .swiper-pagination',
+          clickable: true,
+      },
   });
-
-  // Buscar los botones de pausa y play dentro del swiper actual
-  const pauseBtn = swiperEl.querySelector('#pauseBtn');
-  const playBtn = swiperEl.querySelector('#playBtn');
+  
+  // Inicializar el slider de noticias (sin autoplay y sin paginación)
+  const newsSwiper = new Swiper('.news-swiper', {
+      loop: true,
+      effect: 'fade', // Efecto de transición suave
+      fadeEffect: {
+          crossFade: true
+      },
+      // No tiene autoplay ni paginación
+  });
+  
+  // Controles personalizados para el slider de noticias
+  const newsPrevBtns = document.querySelectorAll('.news-prev');
+  const newsNextBtns = document.querySelectorAll('.news-next');
+  
+  newsPrevBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+          newsSwiper.slidePrev();
+      });
+  });
+  
+  newsNextBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+          newsSwiper.slideNext();
+      });
+  });
+  
+  // Buscar los botones de pausa y play para el carrusel principal
+  const pauseBtn = document.querySelector('#pauseBtn');
+  const playBtn = document.querySelector('#playBtn');
 
   if (pauseBtn && playBtn) {
-    pauseBtn.addEventListener('click', () => {
-      swiper.autoplay.stop();
-      pauseBtn.classList.add('hidden');
-      playBtn.classList.remove('hidden');
-    });
-
-    playBtn.addEventListener('click', () => {
-      swiper.autoplay.start();
-      playBtn.classList.add('hidden');
-      pauseBtn.classList.remove('hidden');
-    });
+      pauseBtn.addEventListener('click', () => {
+          bannerSwiper.autoplay.stop();
+          pauseBtn.classList.add('hidden');
+          playBtn.classList.remove('hidden');
+      });
+      
+      playBtn.addEventListener('click', () => {
+          bannerSwiper.autoplay.start();
+          playBtn.classList.add('hidden');
+          pauseBtn.classList.remove('hidden');
+      });
   }
+  
 });

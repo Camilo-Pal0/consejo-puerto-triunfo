@@ -1,3 +1,5 @@
+
+
 /* Ajustes para hacer que el slider ocupe el tamaño adecuado */
 .swiper {
     width: 100%;
@@ -15,3 +17,10 @@
     opacity: var(--swiper-pagination-bullet-opacity, 1);
     background: #e69e22;
 }
+
+/* Oculta las flechas predeterminadas de Swiper */
+.swiper-button-prev::after,
+.swiper-button-next::after {
+    display: none;
+}
+
